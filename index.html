@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMOX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: white;
+            color: black;
+        }
+        h1 {
+            color: black;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .box {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background-color: white;
+        }
+        .box img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+        }
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .black-circle {
+            background-color: black;
+        }
+        .white-circle {
+            background-color: white;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h1>RAMOX</h1>
+
+<div class="container">
+    <div class="box" onclick="window.open('https://t.me/Bache_Asil', '_blank')">
+        تلگرام <img src="telegram-logo.png" alt="Telegram Logo">
+    </div>
+    <div class="box" onclick="window.open('https://www.instagram.com/raamoox', '_blank')">
+        اینستاگرام <img src="instagram-logo.png" alt="Instagram Logo">
+    </div>
+</div>
+
+<p>ساخته شده توسط راموکس</p>
+
+<div class="theme-toggle">
+    <div class="circle black-circle" onclick="toggleTheme('black')"></div>
+    <div class="circle white-circle" onclick="toggleTheme('white')" style="display: none;"></div>
+</div>
+
+<script>
+    function toggleTheme(theme) {
+        const body = document.body;
+        const boxes = document.querySelectorAll('.box');
+        const blackCircle = document.querySelector('.black-circle');
+        const whiteCircle = document.querySelector('.white-circle');
+
+        if (theme === 'black') {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+            boxes.forEach(box => {
+                box.style.backgroundColor = 'black';
+                box.style.borderColor = 'white';
+                box.style.color = 'white';
+            });
+            blackCircle.style.display = 'none';
+            whiteCircle.style.display = 'block';
+        } else {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+            boxes.forEach(box => {
+                box.style.backgroundColor = 'white';
+                box.style.borderColor = 'black';
+                box.style.color = 'black';
+            });
+            whiteCircle.style.display = 'none';
+            blackCircle.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
